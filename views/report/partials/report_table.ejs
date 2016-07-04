@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>Bookers</th>
+      <th># of bookings (avg)</th>
+      <th>Turnover (avg)</th>
+      <th>LTV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i=0; i<data.length; i++) { %>
+      <tr>
+        <td><%= data[i].first_month %></td>
+        <td><%= data[i].bookers_count %></td>
+        <td><%= Math.round(data[i].bookings_count / data[i].bookers_count * 100)/100 %></td>
+        <td><%= Math.round(data[i].revenue_sum / data[i].bookings_count * 100)/100 %></td>
+        <td><%= Math.round(data[i].revenue_sum / data[i].bookings_count * (parseInt(commission)/100) * 100)/100 %></td>
+      </tr>
+    <% } %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4" class="right"><strong>Total rows:</strong></td>
+      <td><%= data.length %></legend></td>
+    </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Assignment 1: Create a Report (SQL)</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+	</head>
+	<body>
+        <% if (typeof months !== 'undefined' && typeof commission !== 'undefined') { %>
+        <div class="row col-md-8 col-md-offset-2">
+            <h1>Report:</h1>
+            <%- include partials/report_table.ejs %>
+        </div>
+        <% } %>
+        <div class="row col-md-8 col-md-offset-2" style="padding-bottom:30px;">
+            <h2> Generate Report </h2>
+            <%- include partials/report_gen_form.ejs %>
+        </div>
+	</body>
+</html>
